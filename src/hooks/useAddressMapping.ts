@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AddressMapper } from '../utils/addressMapper';
-import type { Province, AddressMapping } from '../types/address';
+import type { Province, MappingData } from '../types/address';
 
 interface AddressData {
   provinces: Province[];
@@ -23,7 +23,7 @@ export function useAddressMapping() {
           fetch('/data/provinces-old.json').then(r => r.json()),
           fetch('/data/provinces-new.json').then(r => r.json()),
           fetch('/data/mapping.json').then(r => r.json()),
-        ]) as [AddressData, AddressData, AddressMapping];
+        ]) as [AddressData, AddressData, MappingData];
 
         // Create mapper instance
         const addressMapper = new AddressMapper(

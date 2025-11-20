@@ -11,8 +11,10 @@ export function useAddressMapping() {
     const load = async () => {
       try {
         const res = await fetch("/data/mapping.json");
-        if (!res.ok) throw new Error("Không tải được mapping.json");
-        const data: AddressMapping = await res.json();
+        if (!res.ok) {
+          throw new Error("Không tải được mapping.json");
+        }
+        const data = (await res.json()) as AddressMapping;
         setMapping(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Unknown error");

@@ -6,7 +6,8 @@ interface ResultCardProps {
 }
 
 export function ResultCard({ result, direction }: ResultCardProps) {
-  const isChange = !result.note.includes('Không có thay đổi');
+  // Phải kiểm tra trường note có tồn tại không
+  const isChange = !result.note?.includes('Không có thay đổi');
 
   return (
     <div className={`border-2 rounded-lg p-6 ${
@@ -20,10 +21,10 @@ export function ResultCard({ result, direction }: ResultCardProps) {
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <div className="text-lg font-semibold text-gray-800">
-              {result.oldAddress.name}
+              {result.oldAddress?.province?.name || '---'}
             </div>
             <div className="text-sm text-gray-500 mt-1">
-              Mã: {result.oldAddress.code}
+              Mã: {result.oldAddress?.province?.code || '---'}
             </div>
           </div>
         </div>
@@ -42,10 +43,10 @@ export function ResultCard({ result, direction }: ResultCardProps) {
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <div className="text-lg font-semibold text-gray-800">
-              {result.newAddress.name}
+              {result.newAddress?.province?.name || '---'}
             </div>
             <div className="text-sm text-gray-500 mt-1">
-              Mã: {result.newAddress.code}
+              Mã: {result.newAddress?.province?.code || '---'}
             </div>
           </div>
         </div>

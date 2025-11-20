@@ -1,4 +1,6 @@
 import type { Province, MappingData, ConversionResult, FullAddress } from '../types/address';
+import { Province, FullAddress, AddressMapping, MappingItem } from "../types/address";
+
 
 export class AddressMapper {
   private provincesOld: Province[];

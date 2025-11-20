@@ -1,8 +1,6 @@
-import type { ConversionResult } from '../types/address';
+import type { ResultCardProps } from '../types/address';
 
-
-
-export function ResultCard({ result, direction }: ResultCardProps) {
+export function ResultCard({ result }: ResultCardProps) {
   // Phải kiểm tra trường note có tồn tại không
   const isChange = !result.note?.includes('Không có thay đổi');
 

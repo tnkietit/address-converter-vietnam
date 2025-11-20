@@ -1,9 +1,6 @@
 import type { ConversionResult } from '../types/address';
 
-interface ResultCardProps {
-  result: ConversionResult;
-  direction: 'old-to-new' | 'new-to-old';
-}
+
 
 export function ResultCard({ result, direction }: ResultCardProps) {
   // Phải kiểm tra trường note có tồn tại không

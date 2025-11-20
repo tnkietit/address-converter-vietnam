@@ -1,16 +1,14 @@
-import { Province, FullAddress, AddressMapping, MappingItem } from "../types/address";
-
-
+import type { Province, FullAddress, AddressMapping, MappingItem, ConversionResult } from "../types/address";
 
 export class AddressMapper {
   private provincesOld: Province[];
   private provincesNew: Province[];
-  private mapping: MappingData;
+  private mapping: AddressMapping;
 
   constructor(
     provincesOld: Province[],
     provincesNew: Province[],
-    mapping: MappingData
+    mapping: AddressMapping
   ) {
     this.provincesOld = provincesOld;
     this.provincesNew = provincesNew;
@@ -19,7 +17,7 @@ export class AddressMapper {
 
   // Convert old address to new address
   convertOldToNew(oldProvinceId: string): ConversionResult | null {
-    const provinceMapping = this.mapping.provinces.find((m) =>
+    const provinceMapping = this.mapping.provinces.find((m: MappingItem) =>
       m.oldIds.includes(oldProvinceId)
     );
 
@@ -53,7 +51,7 @@ export class AddressMapper {
 
   // Convert new address to old address(es)
   convertNewToOld(newProvinceId: string): ConversionResult[] {
-    const provinceMapping = this.mapping.provinces.find((m) => m.newId === newProvinceId);
+    const provinceMapping = this.mapping.provinces.find((m: MappingItem) => m.newId === newProvinceId);
 
     if (!provinceMapping) {
       const oldProvince = this.provincesOld.find((p) => p.id === newProvinceId);
@@ -76,7 +74,7 @@ export class AddressMapper {
     if (!newProvince) return [];
 
     return provinceMapping.oldIds
-      .map((oldId) => {
+      .map((oldId: string) => {
         const oldProvince = this.provincesOld.find((p) => p.id === oldId);
         if (!oldProvince) return null;
 
@@ -97,7 +95,7 @@ export class AddressMapper {
     return provinces.filter(
       (p) =>
         p.name.toLowerCase().includes(normalizedQuery) ||
-        p.code.toLowerCase().includes(normalizedQuery)
+        p.code?.toLowerCase().includes(normalizedQuery)
     );
   }
 

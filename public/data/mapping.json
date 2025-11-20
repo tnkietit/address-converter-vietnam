@@ -1,0 +1,20 @@
+{
+  "provinces": [
+    {"oldIds": ["52", "54"], "newId": "52", "note": "Gộp Bình Định và Phú Yên thành tỉnh Bình Định mới"},
+    {"oldIds": ["56", "58"], "newId": "56", "note": "Gộp Khánh Hòa và Ninh Thuận thành tỉnh Khánh Hòa mới"},
+    {"oldIds": ["60", "68"], "newId": "60", "note": "Gộp Bình Thuận và Lâm Đồng thành tỉnh Bình Thuận mới"},
+    {"oldIds": ["62", "64"], "newId": "62", "note": "Gộp Kon Tum và Gia Lai thành tỉnh Kon Tum mới"},
+    {"oldIds": ["66", "67"], "newId": "66", "note": "Gộp Đắk Lắk và Đắk Nông thành tỉnh Đắk Lắk mới"},
+    {"oldIds": ["70", "72"], "newId": "70", "note": "Gộp Bình Phước và Tây Ninh thành tỉnh Bình Phước mới"},
+    {"oldIds": ["74", "75"], "newId": "74", "note": "Gộp Bình Dương và Đồng Nai thành tỉnh Bình Dương mới"},
+    {"oldIds": ["77", "79"], "newId": "79", "note": "Gộp Bà Rịa - Vũng Tàu vào TP.HCM"},
+    {"oldIds": ["80", "82"], "newId": "80", "note": "Gộp Long An và Tiền Giang thành tỉnh Long An mới"},
+    {"oldIds": ["83", "84"], "newId": "83", "note": "Gộp Bến Tre và Trà Vinh thành tỉnh Bến Tre mới"},
+    {"oldIds": ["86", "87"], "newId": "86", "note": "Gộp Vĩnh Long và Đồng Tháp thành tỉnh Vĩnh Long mới"},
+    {"oldIds": ["89", "91"], "newId": "89", "note": "Gộp An Giang và Kiên Giang thành tỉnh An Giang mới"},
+    {"oldIds": ["92", "93"], "newId": "92", "note": "Gộp Cần Thơ và Hậu Giang thành TP Cần Thơ mới"},
+    {"oldIds": ["94", "95", "96"], "newId": "94", "note": "Gộp Sóc Trăng, Bạc Liêu và Cà Mau thành tỉnh Sóc Trăng mới"}
+  ],
+  "districts": [],
+  "wards": []
+}

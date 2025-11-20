@@ -36,12 +36,12 @@ export class CSVParser {
       ? 'Mã Cũ,Tên Cũ,Mã Mới,Tên Mới,Ghi chú'
       : 'Mã Mới,Tên Mới,Mã Cũ,Tên Cũ,Ghi chú';
 
-    const rows = results.map(r => {
-      const oldId = r.oldAddress.id;
-      const oldName = `"${r.oldAddress.name}"`;
-      const newId = r.newAddress.id;
-      const newName = `"${r.newAddress.name}"`;
-      const note = `"${r.note}"`;
+    const rows = results.map((r) => {
+      const oldId = r.oldAddress?.province?.id ?? '';
+      const oldName = r.oldAddress?.province?.name ? `"${r.oldAddress.province.name}"` : '';
+      const newId = r.newAddress?.province?.id ?? '';
+      const newName = r.newAddress?.province?.name ? `"${r.newAddress.province.name}"` : '';
+      const note = `"${r.note ?? ''}"`;
 
       return direction === 'old-to-new'
         ? `${oldId},${oldName},${newId},${newName},${note}`

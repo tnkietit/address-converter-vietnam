@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { parseCSV, CSVRow } from "../utils/csvParser";
-
 import type { ConversionResult } from '../types/address';
 import { AddressMapper } from '../utils/addressMapper';
-import { CSVParser, type CSVRow } from '../utils/csvParser';
+import { CSVParser } from '../utils/csvParser';
 import { ResultCard } from './ResultCard';
 
 interface BatchConverterProps {
